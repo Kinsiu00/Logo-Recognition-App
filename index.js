@@ -37,7 +37,7 @@ app.post('/companies', (req, res, next) => {
     })
   
 app.get('/', (req, res, next) => {
-    const index = path.join(__dirname, '../client-logo/public/index.html')
+    const index = path.join(__dirname, './client/public/index.html')
     res.sendFile(index)
   })
 //GOOGLE VISION MAGIC
