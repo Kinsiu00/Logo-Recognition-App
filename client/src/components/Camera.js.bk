@@ -1,0 +1,51 @@
+import React, {Component} from 'react';
+import './Camera.css';
+
+
+class Camera extends Component {
+
+
+
+    render(){
+        let canvas;
+        let video = document.getElementsByClassName('video')
+        let context = canvas.getContext('2d');
+
+    clicked = () => {
+        context.drawImage(video, 0, 0, 640, 480);
+    }
+        navigator.getMedia = ( navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia);
+
+            if(!navigator.getMedia){
+                console.log('meh')
+              }
+              else{
+                navigator.getMedia(
+                  {
+                    video: { width: 300, height: 200 }
+                  },
+                  // Success Callback
+                  function(stream){
+                    video[0].srcObject = stream;
+                    video[0].play();
+                },
+                  function(err){
+                    console.log('nugghh')
+                  }
+                );
+        return(            
+            <div>
+                <video className="video"></video>
+                <canvas className="picture" width='300' height='200'></canvas>
+                <button onClick={this.clicked()}>snap snap</button>
+            </div>
+        )
+        
+    }
+}
+}
+
+export default Camera;
