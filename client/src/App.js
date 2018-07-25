@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Menu from './components/Menu';
+
 import Company from './components/Company'
 import WebcamCapture from './components/Camera'
 
@@ -6,26 +8,25 @@ class App extends Component {
 
   state = {
     companyList: [],
-    apiResult: []
+    apiResult: [],
+    currentView: ''
   }
 
   componentWillMount = async () => {
     const response = await fetch('/companies')
     const json = await response.json()
-      this.setState({companyList: json.companies})
+      this.setState({companyList: json.companies, currentView:'home'})
   }
 
   setCurrentCompany = (apiRes) => {
     this.setState({apiResult: apiRes})    
   }
-  checkState = () => {
-    console.log(this.state)
-  }
+
   render() {
     let companyList = this.state.companyList
     return (
       <div>
-        <WebcamCapture setCurrentCompany={this.setCurrentCompany}/>
+        {/* <WebcamCapture setCurrentCompany={this.setCurrentCompany}/> */}
         {
           this.state.apiResult &&
 
@@ -40,13 +41,14 @@ class App extends Component {
           })
 
         }
-        {/* {
-          companyList.map(company => {
-            return <Company key={company.id}cCompany={company}/>
-          })
-        } */}
-        <button buttonResponse={this.checkState()}>click</button>
-      </div>
+        {
+          this.state.currentView === 'home' &&
+          <div>
+          <h1>Welcome to Galvanize</h1>
+          <Menu view={this.state.currentView}/>
+          </div>
+        }
+          </div>
     );
   }
 }

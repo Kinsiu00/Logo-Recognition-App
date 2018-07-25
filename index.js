@@ -4,7 +4,7 @@ const path = require('path')
 const knex = require('./db/knex')
 const cors = require('cors')
 const axios = require('axios')
-const key = require('./vision')
+// const key = require('./vision')
 
 const port = process.env.PORT || 3033
 
