@@ -108,7 +108,11 @@ class App extends Component {
                 <img src={this.state.apiResult.image}></img>
                 <h2>{this.state.apiResult.name}</h2>
                 <p>{this.state.apiResult.description}</p>
-              </div>
+                {this.state.apiResult.website && <img src='./img/www.png'></img>}
+                {this.state.apiResult.facebook && <img src='./img/facebook.png'></img>}
+                {this.state.apiResult.twitter && <img src='./img/twitter.png'></img>}
+                {this.state.apiResult.linkedin && <img src='./img/linkedin.png'></img>}
+                </div>
 
         }
 
