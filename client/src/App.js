@@ -19,7 +19,8 @@ class App extends Component {
   }
 
   setCurrentCompany = (apiRes) => {
-    this.setState({apiResult: apiRes})    
+    this.setState({apiResult: apiRes,
+                    currentView:'result'})    
   }
 
   viewHome = () => {
@@ -63,7 +64,10 @@ class App extends Component {
             companyList.map((company) => {
               return(
                 <div>
-                <Companies cCompany={company}/>
+                <Companies 
+                  currentcompany={company} 
+                  setCurrentCompany={this.setCurrentCompany}
+                />
                 </div>
               )
             })
@@ -93,6 +97,21 @@ class App extends Component {
                             </div>
 
         }
+
+        {/* RESULTS */}
+
+        {
+          this.state.apiResult &&
+
+
+              <div>
+                <img src={this.state.apiResult.image}></img>
+                <h2>{this.state.apiResult.name}</h2>
+                <p>{this.state.apiResult.description}</p>
+              </div>
+
+        }
+
 
         {/* ABOUT */}
 
