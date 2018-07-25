@@ -77,24 +77,26 @@ class App extends Component {
           <div>
               <h1>{this.state.currentView}</h1>
             <WebcamCapture setCurrentCompany={this.setCurrentCompany}/>
-          </div>
+                  {
+                    this.state.apiResult &&
+          
+                    this.state.apiResult.map(({name, description, image}) => {
+                      return (
+                        <div>
+                          <img src={image}></img>
+                          <h2>{name}</h2>
+                          <p>{description}</p>
+                        </div>
+                      )
+                    })
+                  }
+                            </div>
+
         }
 
         {/* ABOUT */}
 
-        {
-          this.state.apiResult &&
 
-          this.state.apiResult.map(({name, description, image}) => {
-            return (
-              <div>
-                <img src={image}></img>
-                <h2>{name}</h2>
-                <p>{description}</p>
-              </div>
-            )
-          })
-        }
 
 
           </div>

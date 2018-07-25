@@ -42,7 +42,7 @@ app.get('/', (req, res, next) => {
   })
 //GOOGLE VISION MAGIC
   app.post('/vision', (req, res, next) => {
-    const road = `https://vision.googleapis.com/v1/images:annotate?key=${process.env.VISION_KEY || key}`
+    const road = `https://vision.googleapis.com/v1/images:annotate?key=${process.env.VISION_KEY}`
     const picture = req.body.image.slice(23)
     const payload = {
         "requests":[
