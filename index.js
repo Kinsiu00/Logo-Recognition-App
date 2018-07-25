@@ -15,7 +15,7 @@ app.use(express.json())
 
 app.get('/companies', (req, res, next) => {
     knex('companies')
-        .orderBy('name', 'desc')
+        .orderBy('name', 'asc')
         .then(companies => res.json({companies: companies}))
 })
 

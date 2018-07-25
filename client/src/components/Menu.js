@@ -10,10 +10,9 @@ class Menu extends Component {
 
         return (
             <div>
-                <h1>{this.props.view}</h1>
-                <h2 onClick={this.props.viewCompanies} >Member Company List</h2>
-                <h2>Logo Recognition [Alpha]</h2>
-                <h2>About</h2>
+                <h2 onClick={this.props.handleCompanies} >Member Company List</h2>
+                <h2 onClick={this.props.handleCamera}>Logo Recognition [Alpha]</h2>
+                <h2 onClick={this.props.handleAbout}>About</h2>
             </div>
         )
     }
