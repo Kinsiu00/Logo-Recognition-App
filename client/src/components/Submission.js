@@ -5,17 +5,13 @@ class Submission extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            captured: false
-        }
     }
     clicked = (e) => {
             e.preventDefault();
-            this.state.captured=true;
             const image = this.props.imagine
             axios.post('/vision', {image}).then(
                 (result) => {
-                    this.props.setCurrentCompany(result.data)
+                    this.props.setCurrentCompany(result.data[0])
                 })
     }
 

@@ -18,8 +18,8 @@ class App extends Component {
       this.setState({companyList: json.companies, currentView:'home'})
   }
 
-  setCurrentCompany = (apiRes) => {
-    this.setState({apiResult: apiRes,
+  setCurrentCompany = (result) => {
+    this.setState({apiResult: result,
                     currentView:'result'})    
   }
 
@@ -41,15 +41,17 @@ class App extends Component {
 
   render() {
     let companyList = this.state.companyList
+    let view = this.state.currentView
+    let result = this.state.apiResult
     return (
       <div>
         {/* HOME VIEW */}
 
         {
-          this.state.currentView === 'home' &&
+          view === 'home' &&
           <div>
           <h1>Welcome to Galvanize</h1>
-          <h1>{this.state.currentView}</h1>
+          <h1>{view}</h1>
           <Menu handleHome={this.viewHome} 
                 handleCompanies={this.viewCompanies} 
                 handleCamera={this.viewCamera} 
@@ -60,7 +62,7 @@ class App extends Component {
         {/* COMPANY VIEW */}
 
         {
-          this.state.currentView === 'companies' &&
+          view === 'companies' &&
             companyList.map((company) => {
               return(
                 <div>
@@ -76,15 +78,15 @@ class App extends Component {
         {/* LOGO RECOGNITION */}
 
         {
-          this.state.currentView === 'camera' &&
+          view === 'camera' &&
 
           <div>
-              <h1>{this.state.currentView}</h1>
+              <h1>{view}</h1>
             <WebcamCapture setCurrentCompany={this.setCurrentCompany}/>
-                  {
-                    this.state.apiResult &&
+                  {/* {
+                    result &&
           
-                    this.state.apiResult.map(({name, description, image}) => {
+                    result.map(({name, description, image}) => {
                       return (
                         <div>
                           <img src={image}></img>
@@ -93,7 +95,7 @@ class App extends Component {
                         </div>
                       )
                     })
-                  }
+                  } */}
                             </div>
 
         }
@@ -101,17 +103,17 @@ class App extends Component {
         {/* RESULTS */}
 
         {
-          this.state.apiResult &&
+          result &&
 
 
               <div>
-                <img src={this.state.apiResult.image}></img>
-                <h2>{this.state.apiResult.name}</h2>
-                <p>{this.state.apiResult.description}</p>
-                {this.state.apiResult.website && <img src='./img/www.png'></img>}
-                {this.state.apiResult.facebook && <img src='./img/facebook.png'></img>}
-                {this.state.apiResult.twitter && <img src='./img/twitter.png'></img>}
-                {this.state.apiResult.linkedin && <img src='./img/linkedin.png'></img>}
+                <img src={result.image}></img>
+                <h2>{result.name}</h2>
+                <p>{result.description}</p>
+                {result.website && <a href={result.website}><img src='./img/www.png' alt='company website'></img></a>}
+                {result.facebook && <a href={result.facebook}><img src='./img/facebook.png' alt='facebook'></img></a>}
+                {result.twitter && <a href={result.twitter}><img src='./img/twitter.png' alt='twitter'></img></a>}
+                {result.linkedin && <a href={result.linkedin}><img src='./img/linkedin.png' alt='linkedin'></img></a>}
                 </div>
 
         }
