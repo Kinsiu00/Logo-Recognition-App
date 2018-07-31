@@ -7,14 +7,14 @@ exports.seed = function(knex, Promise) {
       // ALL INFORMATION BELOW WAS COMPILED THROUGH PUBLICALLY AVAILABLE INFORMATION
       return knex('companies').insert([
         { id: 1, 
-          label: 'panda',
-          name: 'Kin', 
-          description: 'A member of the g79 Cohort of Galvanize. His hobbies include traveling, being a foodie, along with consuming copious amounts of articles, literature, and books.', 
-          image:'http://thestorydragon.com/wp-content/uploads/2016/02/06.png',
-          website:'',
-          facebook:'',
-          twitter:'',
-          linkedin:'https://www.linkedin.com/in/kin-siu'
+          label: 'jade',
+          name: 'Jade Insights', 
+          description: 'Jade Insights provides a comprehensive view of all major departments of a cannabis company. With easy-to-use dashboards, users can understand their Key Performance Indicators (KPIs), then compare their operations to industry benchmarks. Users are also able to set up regularly scheduled alerts, emails and reports to manage by exception.', 
+          image:'https://pbs.twimg.com/profile_images/943618818030497792/XNQ04uMo_400x400.jpg',
+          website:'https://www.jadeinsights.com/',
+          facebook:'https://www.facebook.com/jadeinsights/',
+          twitter:'https://twitter.com/jadeinsights',
+          linkedin:'https://www.linkedin.com/company/jade-insights/'
         },
         { id: 2, 
           label: 'galvanize',
