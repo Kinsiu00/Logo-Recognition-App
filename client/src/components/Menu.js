@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {NavItem, Navbar, Icon} from 'react-materialize'
 
 class Menu extends Component {
     constructor(props){
@@ -9,10 +10,14 @@ class Menu extends Component {
     render(){
 
         return (
+
             <div>
-                <h2 onClick={this.props.handleCompanies} >Member Company List</h2>
-                <h2 onClick={this.props.handleCamera}>Logo Recognition [Alpha]</h2>
-                <h2 onClick={this.props.handleAbout}>About</h2>
+                <Navbar draggable='true' class='blue' brand=' Galvanize NYC Company Directory' right>
+                <NavItem onClick={this.props.handleHome}><Icon>home</Icon><p>home</p></NavItem>
+                <NavItem onClick={this.props.handleCamera}><Icon>camera</Icon><p>camera</p></NavItem>
+                <NavItem onClick={this.props.handleCompanies}><Icon>view_list</Icon><p>companies</p></NavItem>
+                <NavItem onClick={this.props.handleAbout}><Icon>help_outline</Icon><p>about</p></NavItem>
+                </Navbar>
             </div>
         )
     }

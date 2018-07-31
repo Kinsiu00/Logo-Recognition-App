@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+
 import Menu from './components/Menu';
 
 import Companies from './components/Companies'
 import WebcamCapture from './components/Camera'
 
+
 class App extends Component {
 
   state = {
+    loading: true,
     companyList: [],
     apiResult: [],
     currentView: ''
@@ -15,7 +18,7 @@ class App extends Component {
   componentWillMount = async () => {
     const response = await fetch('/companies')
     const json = await response.json()
-      this.setState({companyList: json.companies, currentView:'home'})
+      this.setState({loading: false, companyList: json.companies, currentView:'home'})
   }
 
   setCurrentCompany = (result) => {
@@ -45,17 +48,18 @@ class App extends Component {
     let result = this.state.apiResult
     return (
       <div>
+          <Menu handleHome={this.viewHome} 
+                handleCompanies={this.viewCompanies} 
+                handleCamera={this.viewCamera} 
+                handleAbout={this.viewAbout}/>
+
         {/* HOME VIEW */}
 
         {
           view === 'home' &&
           <div>
           <h1>Welcome to Galvanize</h1>
-          <h1>{view}</h1>
-          <Menu handleHome={this.viewHome} 
-                handleCompanies={this.viewCompanies} 
-                handleCamera={this.viewCamera} 
-                handleAbout={this.viewAbout}/>
+
           </div>
         }
 
@@ -81,7 +85,6 @@ class App extends Component {
           view === 'camera' &&
 
           <div>
-              <h1>{view}</h1>
             <WebcamCapture setCurrentCompany={this.setCurrentCompany}/>
                   {/* {
                     result &&
@@ -103,7 +106,7 @@ class App extends Component {
         {/* RESULTS */}
 
         {
-          result &&
+          view === 'result' &&
 
 
               <div>
@@ -121,6 +124,12 @@ class App extends Component {
 
         {/* ABOUT */}
 
+        {
+          view === 'about' &&
+
+          <h1>hi</h1>
+
+        }
 
 
 
