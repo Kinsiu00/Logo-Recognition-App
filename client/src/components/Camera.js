@@ -26,8 +26,8 @@ export default class WebcamCapture extends Component {
   render() {
     const videoConstraints = {
       margin: "auto",
-      width: 100,
-      height: 100,
+      width: 400,
+      height: 400,
       facingMode: 'environment' || 'user'
       // facingMode: {exact:'environment'},
       // OPERATIONAL, NEEDS FURTHER TESTING
