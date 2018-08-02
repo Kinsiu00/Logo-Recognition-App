@@ -8,12 +8,12 @@ class Companies extends Component {
     }
 
     render(){
-        const {name} = this.props.currentcompany;
+        const {name, image} = this.props.currentcompany;
         return(
-            <div>
-                <p class='name' onClick={this.setCompany}>{name}</p>
-                <p>-</p>
-            </div>
+            <li class="collection-item avatar">
+            <img src={image} alt="" class="circle" onClick={this.setCompany}></img>
+            <span class="title" onClick={this.setCompany}>{name}</span>
+            </li>
         )
     }
 }

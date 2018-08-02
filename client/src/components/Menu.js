@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {NavItem, Navbar, Icon} from 'react-materialize'
-
 class Menu extends Component {
     constructor(props){
         super(props)
@@ -10,14 +8,19 @@ class Menu extends Component {
     render(){
 
         return (
+<div>
+ <nav>
+     <div class="nav-wrapper">
+       <ul class="row">
+         <li class="col s3 center-align" onClick={this.props.handleHome}><i class="material-icons">home</i></li>
+         <li class="col s3 center-align" onClick={this.props.handleCamera}><i class="material-icons">camera</i></li>
+         <li class="col s3 center-align" onClick={this.props.handleCompanies}><i class="material-icons">view_list</i></li>
+         <li class="col s3 center-align" onClick={this.props.handleAbout}><i class="material-icons">help_outline</i></li>
 
-            <div>
-                <Navbar draggable='true' class='blue' brand='NYC Directory' right>
-                <NavItem onClick={this.props.handleHome}><Icon>home</Icon><p>home</p></NavItem>
-                <NavItem onClick={this.props.handleCamera}><Icon>camera</Icon><p>camera</p></NavItem>
-                <NavItem onClick={this.props.handleCompanies}><Icon>view_list</Icon><p>companies</p></NavItem>
-                <NavItem onClick={this.props.handleAbout}><Icon>help_outline</Icon><p>about</p></NavItem>
-                </Navbar>
+       </ul>
+    </div>
+   </nav>
+    
             </div>
         )
     }

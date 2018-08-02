@@ -21,6 +21,7 @@
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "knex": "^0.15.1",
+    "materialize-css": "^1.0.0-rc.2",
     "pg": "^7.4.3",
     "react-materialize": "^2.3.3",
     "react-webcam": "^1.0.1",

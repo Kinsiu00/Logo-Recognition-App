@@ -67,16 +67,21 @@ class App extends Component {
 
         {
           view === 'companies' &&
+
+          <ul class="collection">
+          {
             companyList.map((company) => {
               return(
-                <div>
+                
                 <Companies 
                   currentcompany={company} 
                   setCurrentCompany={this.setCurrentCompany}
                 />
-                </div>
+                
               )
             })
+          }
+          </ul>
         }
 
         {/* LOGO RECOGNITION */}
@@ -127,8 +132,10 @@ class App extends Component {
         {
           view === 'about' &&
 
-          <h1>hi</h1>
-
+          <div>
+          <h4>Created by: <a href='https://www.linkedin.com/in/kin-siu/'>Kin Siu</a></h4>
+          <h4>Check out the <a href='https://github.com/Kinsiu00/Spring-St-Logos'>code!</a></h4>
+          </div>
         }
 
 
