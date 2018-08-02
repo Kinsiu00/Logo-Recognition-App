@@ -4,7 +4,7 @@ class Menu extends Component {
 
     render(){
         return (
-<div>
+<div className='navbar-fixed'>
  <nav>
      <div style={{backgroundColor: 'black'}}className="nav-wrapper">
        <ul className="row">
