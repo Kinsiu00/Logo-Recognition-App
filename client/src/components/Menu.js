@@ -1,21 +1,15 @@
 import React, {Component} from 'react';
 class Menu extends Component {
-    constructor(props){
-        super(props)
 
-    }
 
     render(){
-
         return (
 <div>
  <nav>
-     <div class="nav-wrapper">
-       <ul class="row">
-         <li class="col s3 center-align" onClick={this.props.handleHome}><i class="material-icons">home</i></li>
-         <li class="col s3 center-align" onClick={this.props.handleCamera}><i class="material-icons">camera</i></li>
-         <li class="col s3 center-align" onClick={this.props.handleCompanies}><i class="material-icons">view_list</i></li>
-         <li class="col s3 center-align" onClick={this.props.handleAbout}><i class="material-icons">help_outline</i></li>
+     <div style={{backgroundColor: 'black'}}className="nav-wrapper">
+       <ul className="row">
+         <li style={{fontSize: 28}}className="col s9 center-align" onClick={this.props.viewHome}>[logo] <span style={{color:'red'}}>//</span> Reader</li>
+         <li style={{color: 'red'}}className="col s3 center-align" onClick={this.props.viewAbout}><i className="large material-icons">help_outline</i></li>
 
        </ul>
     </div>

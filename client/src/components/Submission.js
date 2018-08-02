@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 class Submission extends Component {
-    constructor(props){
-        super(props);
 
-    }
     clicked = (e) => {
             e.preventDefault();
             const image = this.props.imagine
@@ -17,11 +14,8 @@ class Submission extends Component {
 
     render(){
         return(
-            <div>
-                <form>
-                    <button onClick={this.clicked}>send me</button>
-                </form>
-            </div>
+            <button onClick={this.clicked}>send me</button>
+
         )
     }
 

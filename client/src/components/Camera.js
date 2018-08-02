@@ -25,29 +25,36 @@ export default class WebcamCapture extends Component {
 
   render() {
     const videoConstraints = {
-      width: 720,
-      height: 1280,
+      margin: "auto",
+      width: 100,
+      height: 100,
       facingMode: 'environment' || 'user'
       // facingMode: {exact:'environment'},
       // OPERATIONAL, NEEDS FURTHER TESTING
     };
 
+
     return (
-      <div>
+      <div class='container'>
+      <h4>Welcome!</h4>
+      <p>Snap a photo of any logo to learn more about our Galvanize Workspace!</p>
         {!this.state.captured &&
-        <div>
+        <div style={{marginLeft: 50}}>
           <Webcam
           audio={false}
-          height={350}
+          height={250}
           ref={this.setRef}
           screenshotFormat="image/jpeg"
-          width={350}
-          videoConstraints={videoConstraints}
-          />
-          <button onClick={this.capture}>Capture photo</button>
+          width={250}
+          videoConstraints={videoConstraints}/>
+          <div class='row'>
+            <a style={{marginRight:2}}class="col s5 btn-large">TAKE PHOTO</a>
+            <a style={{marginLeft:2}}class="col s5 btn-large orange" onClick={this.props.viewCompanies}>BROWSE</a>
+          {/* <button class='col s4 offset-s4' onClick={this.capture}>Capture photo</button> */}
+          </div>        
         </div>
         }
-        <div><img src={this.state.image} /></div>
+        <div><img src={this.state.image} alt='' /></div>
         {this.state.captured &&
             <div>
                 <Submission setCurrentCompany={this.props.setCurrentCompany} imagine={this.state.image}/>

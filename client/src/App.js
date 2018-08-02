@@ -48,18 +48,23 @@ class App extends Component {
     let result = this.state.apiResult
     return (
       <div>
-          <Menu handleHome={this.viewHome} 
-                handleCompanies={this.viewCompanies} 
-                handleCamera={this.viewCamera} 
-                handleAbout={this.viewAbout}/>
+          <Menu viewHome={this.viewHome} 
+                viewAbout={this.viewAbout}/>
 
         {/* HOME VIEW */}
 
         {
           view === 'home' &&
-          <div>
-          <h1>Welcome to Galvanize</h1>
-
+          <div className='container'>
+          <h4>Welcome!</h4>
+          <p>Snap a photo of any logo to learn more about our Galvanize Workspace!</p>
+          <div className='row'>
+          <img className='col s8 offset-s2' src='https://pbs.twimg.com/profile_images/880512924766175232/epZ-lhXw_400x400.jpg' alt='Galvanize Logo'></img>
+          </div>
+          <div className='row'>
+          <a style={{marginRight:2}}className="col s5 offset-s1 btn-large" onClick={this.viewCamera}>TAKE PHOTO</a>
+          <a style={{marginLeft:2}}className="col s5 btn-large orange" onClick={this.viewCompanies}>BROWSE</a>
+          </div>
           </div>
         }
 
@@ -68,13 +73,13 @@ class App extends Component {
         {
           view === 'companies' &&
 
-          <ul class="collection">
+          <ul className="collection">
           {
             companyList.map((company) => {
               return(
                 
                 <Companies 
-                  currentcompany={company} 
+                  currentcompany={company}
                   setCurrentCompany={this.setCurrentCompany}
                 />
                 
@@ -90,7 +95,9 @@ class App extends Component {
           view === 'camera' &&
 
           <div>
-            <WebcamCapture setCurrentCompany={this.setCurrentCompany}/>
+            <WebcamCapture 
+            setCurrentCompany={this.setCurrentCompany}
+            viewCompanies={this.viewCompanies}/>
                   {/* {
                     result &&
           
@@ -115,7 +122,7 @@ class App extends Component {
 
 
               <div>
-                <img src={result.image}></img>
+                <img src={result.image} alt='result logo'></img>
                 <h2>{result.name}</h2>
                 <p>{result.description}</p>
                 {result.website && <a href={result.website}><img src='./img/www.png' alt='company website'></img></a>}
