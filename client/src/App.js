@@ -75,19 +75,15 @@ class App extends Component {
 
         {/* COMPANY VIEW */}
 
-        {
-          view === 'companies' &&
+        {view === 'companies' &&
 
           <ul className="collection">
           {
             companyList.map((company) => {
-              return(
-                
+              return(  
                 <Companies 
                   currentcompany={company}
-                  setCurrentCompany={this.setCurrentCompany}
-                />
-                
+                  setCurrentCompany={this.setCurrentCompany}/>
               )
             })
           }
@@ -96,35 +92,32 @@ class App extends Component {
 
         {/* LOGO RECOGNITION */}
 
-        {
-          view === 'camera' &&
+        {view === 'camera' &&
 
           <div>
             <WebcamCapture 
             setCurrentCompany={this.setCurrentCompany}
             viewCompanies={this.viewCompanies}/>
           </div>
-
         }
 
         {/* RESULTS */}
 
-        {
-          view === 'result' &&
-
+        {view === 'result' &&
 
               <div class='container'>
                 <div class='row'>
-                <img class= 'col s8 offset-s2'src={result.image} alt='result logo'></img>
-                <div class='row'>
-                <h4 class='col s12'>{result.name}</h4>
+                <br/>
+                  <img class= 'col s8 offset-s2'src={result.image} alt='result logo'></img>
+                  <div class='row'>
+                  <h4 class='col s12'>{result.name}</h4>
                 </div>
                 <p>{result.description}</p>
                 <footer class='row'>
-                {result.website && <a class='col s2 offset-s1' href={result.website}><img src='./img/www.png' alt='company website'></img></a>}
-                {result.facebook && <a class='col s2' href={result.facebook}><img src='./img/facebook.png' alt='facebook'></img></a>}
-                {result.twitter && <a class='col s2' href={result.twitter}><img src='./img/twitter.png' alt='twitter'></img></a>}
-                {result.linkedin && <a class='col s2' href={result.linkedin}><img src='./img/linkedin.png' alt='linkedin'></img></a>}
+                  {result.website && <a class='col s3' href={result.website}><img src='./img/www.png' alt='company website'></img></a>}
+                  {result.facebook && <a class='col s3' href={result.facebook}><img src='./img/facebook.png' alt='facebook'></img></a>}
+                  {result.twitter && <a class='col s3' href={result.twitter}><img src='./img/twitter.png' alt='twitter'></img></a>}
+                  {result.linkedin && <a class='col s3' href={result.linkedin}><img src='./img/linkedin.png' alt='linkedin'></img></a>}
                 </footer>
                 </div>  
               </div>
@@ -134,22 +127,21 @@ class App extends Component {
 
         {/* ABOUT */}
 
-        {
-          view === 'about' &&
+        {view === 'about' &&
 
           <div class='container'>
           <div class='row'>
-          <img class= 'col s8 offset-s2'src='./img/profile.jpg' alt='profile'></img>
+            <img class= 'col s8 offset-s2'src='./img/profile.jpg' alt='profile'></img>
           <div class='row'>
-          <h4 class='col s12'>[logo] <span style={{color:'magenta'}}>//</span> Reader</h4>
+            <h4 class='col s12'>[logo] <span style={{color:'red'}}>//</span> Reader</h4>
           </div>
-          <p>A gStudent Project by Kin Siu.</p>
+         <p>A gStudent Project by Kin Siu.</p>
           <p>A Mobile image-recognition application for the Galvanize NYC campus. Uses Google Vision API to identify Galvanize member companies 
             based on images of their logos and text.
           </p>
           <footer class='row'>
-          <a class='col s2 offset-s3' href='https://github.com/Kinsiu00/Spring-St-Logos'><img src='./img/github.png' alt='github'></img></a>
-          <a class='col s2' href='https://www.linkedin.com/in/kin-siu/'><img src='./img/linkedin.png' alt='linkedin'></img></a>
+            <a class='col s2 offset-s3' href='https://github.com/Kinsiu00/Spring-St-Logos'><img src='./img/github.png' alt='github'></img></a>
+            <a class='col s2' href='https://www.linkedin.com/in/kin-siu/'><img src='./img/linkedin.png' alt='linkedin'></img></a>
           </footer>
           </div>  
         </div>
