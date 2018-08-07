@@ -114,10 +114,10 @@ class App extends Component {
                 </div>
                 <p>{result.description}</p>
                 <footer class='row'>
-                  {result.website && <a class='col s3' href={result.website}><img src='./img/www.png' alt='company website'></img></a>}
-                  {result.facebook && <a class='col s3' href={result.facebook}><img src='./img/facebook.png' alt='facebook'></img></a>}
-                  {result.twitter && <a class='col s3' href={result.twitter}><img src='./img/twitter.png' alt='twitter'></img></a>}
-                  {result.linkedin && <a class='col s3' href={result.linkedin}><img src='./img/linkedin.png' alt='linkedin'></img></a>}
+                  {result.website && <a class='col s3 center-align' href={result.website}><img src='./img/www.png' alt='company website'></img></a>}
+                  {result.facebook && <a class='col s3 center-align' href={result.facebook}><img src='./img/facebook.png' alt='facebook'></img></a>}
+                  {result.twitter && <a class='col s3 center-align' href={result.twitter}><img src='./img/twitter.png' alt='twitter'></img></a>}
+                  {result.linkedin && <a class='col s3 center-align' href={result.linkedin}><img src='./img/linkedin.png' alt='linkedin'></img></a>}
                 </footer>
                 </div>  
               </div>
@@ -140,8 +140,8 @@ class App extends Component {
             based on images of their logos and text.
           </p>
           <footer class='row'>
-            <a class='col s2 offset-s3' href='https://github.com/Kinsiu00/Spring-St-Logos'><img src='./img/github.png' alt='github'></img></a>
-            <a class='col s2' href='https://www.linkedin.com/in/kin-siu/'><img src='./img/linkedin.png' alt='linkedin'></img></a>
+            <a class='col s3 offset-s3' href='https://github.com/Kinsiu00/Spring-St-Logos'><img src='./img/github.png' alt='github'></img></a>
+            <a class='col s3' href='https://www.linkedin.com/in/kin-siu/'><img src='./img/linkedin.png' alt='linkedin'></img></a>
           </footer>
           </div>  
         </div>
