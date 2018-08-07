@@ -8,9 +8,8 @@ class Menu extends Component {
  <nav>
      <div style={{backgroundColor: 'black'}}className="nav-wrapper">
        <ul className="row">
-         <li style={{fontSize: 28}}className="col s9 center-align" onClick={this.props.viewHome}>[logo] <span style={{color:'red'}}>//</span> Reader</li>
-         <li style={{color: 'red'}}className="col s3 center-align" onClick={this.props.viewAbout}><i className="large material-icons">help_outline</i></li>
-
+         <li className='col s1 ' onClick={this.props.viewHome}><span><img src='./img/logoReader.png' alt='[logo] // Reader'></img></span></li>
+         <li style={{color: 'magenta'}}className="col s2 offset-s9 center-align" onClick={this.props.viewAbout}><i className="large material-icons">help_outline</i></li>
        </ul>
     </div>
    </nav>

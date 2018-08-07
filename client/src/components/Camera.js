@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Webcam from 'react-webcam';
-import Submission from './Submission'
+import axios from 'axios'
 
 export default class WebcamCapture extends Component {
   constructor(props) {
@@ -22,43 +22,65 @@ export default class WebcamCapture extends Component {
         captured: true
     })
   };
+  
+  retake = () => {
+    this.setState({
+      captured: false
+    })
+  }
+  sendIt = (e) => {
+    e.preventDefault();
+    const image = this.state.image
+    axios.post('/vision', {image}).then(
+        (result) => {
+            this.props.setCurrentCompany(result.data[0])
+        })
+  }
 
   render() {
     const videoConstraints = {
       margin: "auto",
-      width: 720,
-      height: 640,
+      width: 480,
+      height: 480,
       facingMode: 'environment' || 'user'
-      // facingMode: {exact:'environment'},
-      // OPERATIONAL, NEEDS FURTHER TESTING
+
     };
 
 
     return (
-      <div class='container'>
+      <div className='container'>
       <h4>Welcome!</h4>
       <p>Snap a photo of any logo to learn more about our Galvanize Workspace!</p>
+        
+        {/* WEBCAM */}
+
         {!this.state.captured &&
         <div style={{marginLeft: 50}}>
           <Webcam
           audio={false}
           height={250}
           ref={this.setRef}
+          onUserMedia={this.handleUserMedia}
           screenshotFormat="image/jpeg"
           width={250}
           videoConstraints={videoConstraints}/>
-          <div class='row'>
-            <a style={{marginRight:2}}class="col s5 btn-large">TAKE PHOTO</a>
-            <a style={{marginLeft:2}}class="col s5 btn-large orange" onClick={this.props.viewCompanies}>BROWSE</a>
-          {/* <button class='col s4 offset-s4' onClick={this.capture}>Capture photo</button> */}
+          <div className='row'>
+            <a style={{marginRight:2}}className="col s5 btn-large" onClick={this.capture}>TAKE PHOTO</a>
+            <a style={{marginLeft:2}}className="col s5 btn-large orange" onClick={this.props.viewCompanies}>BROWSE</a>
           </div>        
         </div>
         }
-        <div><img src={this.state.image} alt='' /></div>
-        {this.state.captured &&
-            <div>
-                <Submission setCurrentCompany={this.props.setCurrentCompany} imagine={this.state.image}/>
-            </div>
+
+        {/* PHOTO */}
+
+       {this.state.captured &&
+        <div style={{marginLeft: 50}}>
+          <div><img src={this.state.image} alt='' /></div>
+          <div className='row'>
+            <a style={{marginRight:2}}className="col s5 btn-large" onClick={this.sendIt}>FIND ME</a>
+            <a style={{marginLeft:2}}className="col s5 btn-large orange" onClick={this.retake}>RETAKE</a>
+          </div>     
+        </div>
         }
 
       </div>

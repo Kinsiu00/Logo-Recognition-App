@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './Company.css'
 
 class Companies extends Component {
     setCompany = (e) => {
@@ -12,7 +11,7 @@ class Companies extends Component {
         return(
             <li class="collection-item avatar" onClick={this.setCompany} key={id}>
             <img src={image} alt="" class="circle"></img>
-            <span class="title">{name}</span>
+            <span class="title center-align">{name}</span>
             </li>
         )
     }

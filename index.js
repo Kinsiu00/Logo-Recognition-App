@@ -9,7 +9,6 @@ const axios = require('axios')
 const port = process.env.PORT || 3033
 
 app.use(express.static(path.join(__dirname, './client/build')))
-// app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json())
 
@@ -95,6 +94,7 @@ app.get('/', (req, res, next) => {
 
 
         knex('companies').where('label', searchTerm).then(result => {
+            console.log('initial' + result)
 
             if(result.length) {
                 console.log(result)
@@ -137,7 +137,7 @@ app.get('/', (req, res, next) => {
                             }
                             else{
                                 console.log('nothing found :(')
-                                reply = 'Nothing Found.'
+                                res.json('error')
                             }
                         })
                     }
