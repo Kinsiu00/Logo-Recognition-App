@@ -78,7 +78,7 @@ app.get('/', (req, res, next) => {
         if(logoResponse.logoAnnotations){
             console.log('logo')
             logoResults = logoResponse.logoAnnotations
-            searchTerm = logoResponse.logoAnnotations[0].description.toLowerCase();
+            searchTerm = logoResponse.logoAnnotations[0].description.toLowerCase().replace(/\s/g,'');
             console.log('searchTerm: ' + searchTerm)
 
         //IF TEXT IS RECOGNIZED

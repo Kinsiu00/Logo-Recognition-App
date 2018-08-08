@@ -37,7 +37,7 @@ exports.seed = function(knex, Promise) {
           linkedin:'https://www.linkedin.com/company/plexus-entertainment-llc---gowatchit-com/'
         },
         { id: 4, 
-          label: 'designgroupitalia',
+          label: 'design group italia',
           name: 'Design Group Italia', 
           description: 'A design and branding firm specializing in creating value for companies through design-powered innovation.', 
           image:'https://pbs.twimg.com/profile_images/981088167498567680/p6svkMlp_400x400.jpg',
@@ -207,7 +207,7 @@ exports.seed = function(knex, Promise) {
           linkedin:'https://www.linkedin.com/company/anacondainc/'
         },
         { id: 21, 
-          label: 'wanderingbear',
+          label: 'wanderingbearcoffee',
           name: 'Wandering Bear Coffee', 
           description: 'Created cold brew coffee modeled after our favorite coffee shops around New York City. The boxes (with a tap!) eliminates air and light: the two things that makes coffee go stale.', 
           image:'https://pbs.twimg.com/profile_images/476096813762883587/SpSEUsTE_400x400.jpeg',
@@ -287,7 +287,7 @@ exports.seed = function(knex, Promise) {
           linkedin:'https://www.linkedin.com/company/hubspire/?originalSubdomain=in'
         },
         { id: 29, 
-          label: 'catchandrelease',
+          label: 'catch&release',
           name: 'Catch and Release', 
           description: 'Catch&Release partners with agencies, brands and production companies to discover user-generated, accessible and unrepresented content that meets the ever-increasing demand for authentic, ephemeral, relevant, emotional and affordable content.', 
           image:'https://pbs.twimg.com/profile_images/1007717297098665984/NqCs3-8M_400x400.jpg',
@@ -407,7 +407,7 @@ exports.seed = function(knex, Promise) {
           linkedin:'https://www.linkedin.com/company/arlo-hotel-group/'
         },
         { id: 41, 
-          label: 'launchcapital',
+          label: 'launch capital',
           name: 'Launch Capital', 
           description: 'LaunchCapital provides seed funding for startups that have exponential growth expectations. We syndicate over 90% of our deals with local angel investors and venture capitalists. We will take on an active role with our portfolio companies depending on the needs and nature of the business.', 
           image:'https://pbs.twimg.com/profile_images/892054683174543362/OLLdc_RG_400x400.jpg',
@@ -427,7 +427,7 @@ exports.seed = function(knex, Promise) {
           linkedin:'https://www.linkedin.com/company/dopamine/'
         },
         { id: 43, 
-          label: 'munichre',
+          label: 'munich re',
           name: 'Munich Re', 
           description: 'Munich Re is one of the world’s leading risk carriers and stands for exceptional solution-based expertise, consistent risk management, financial stability and client proximity. The Group operates in all lines of insurance, with around 45,000 employees throughout the world and combines primary insurance and reinsurance under one roof.', 
           image:'https://pbs.twimg.com/profile_images/660110621355188224/Bcph4r16_400x400.png',
