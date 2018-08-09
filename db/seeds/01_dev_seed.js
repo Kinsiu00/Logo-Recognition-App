@@ -217,7 +217,7 @@ exports.seed = function(knex, Promise) {
           linkedin:'https://www.linkedin.com/company/wandering-bear-coffee-co-/'
         },
         { id: 22, 
-          label: 'bfv',
+          label: 'bfvbrandfoundryventures',
           name: 'Brand Foundry Ventures', 
           description: 'A Consumer focused Venture Capital firm collaborating with visionaries to build brands that scale with purpose.', 
           image:'https://pbs.twimg.com/profile_images/463798296721358849/7CW7HOCC_400x400.png',

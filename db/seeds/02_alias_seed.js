@@ -28,7 +28,12 @@ exports.seed = function(knex, Promise) {
         {id: 21, company_id: 14, label: ':miles'},
         {id: 22, company_id: 14, label: '.:.miles'},
         {id: 23, company_id: 14, label: '.::.miles'},
-        {id: 24, company_id: 14, label: '!!miles'}
+        {id: 24, company_id: 14, label: '!!miles'},
+        {id: 25, company_id: 3, label: '回gowatchlt'},
+        {id: 26, company_id: 3, label: '回gowatchit'},
+        {id: 27, company_id: 22, label: 'BFV'},
+        {id: 28, company_id: 22, label: 'brandfoundryventures'},
+        {id: 29, company_id: 22, label: 'brandfoundry'}
 
 
 

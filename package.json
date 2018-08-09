@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-client": "cd ./client && yarn build",
+    "build-client": "cd ./client && npm run build",
     "dev": "npm run server-start & npm run client-start",
     "server-start": "nodemon ./server/server.js",
     "postinstall": "cd ./client && npm install",
-    "client-start": "cd ./client && yarn start",
+    "client-start": "cd ./client && npm run start",
     "start": "npm run build-client && node ./index.js"
   },
   "keywords": [],
@@ -24,7 +24,6 @@
     "materialize-css": "^1.0.0-rc.2",
     "pg": "^7.4.3",
     "react-materialize": "^2.3.3",
-    "react-webcam": "^1.0.1",
-    "yarn": "^1.7.0"
+    "react-webcam": "^1.0.1"
   }
 }
